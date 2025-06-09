@@ -1,4 +1,6 @@
-import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
+// @ts-expect-error Deprecated but still works
+import { Github } from "lucide-react";
 
 const projects = [ 
   {
@@ -10,7 +12,17 @@ const projects = [
     tags: ['Reactjs', 'Sanity.io', 'SCSS'],
     demoUrl: "https://reactjs-portfolio-two-dun.vercel.app/",
     githubUrl: "https://github.com/Darrin-Holtz/Reactjs-Portfolio",
-  },  
+  },
+  {
+    id: 2,
+    title: "Freedom Mountain Ministries",
+    description:
+     "A custom WordPress theme built from the ground up for a faith-based organization focused on spiritual retreats, events, and outreach. The site features a clean, responsive design with Tailwind CSS, dynamic event listings, a custom contact form with SMTP integration, and admin-friendly controls via the WordPress Customizer.Key Features: Fully responsive WordPress theme using TailwindCSS, Custom post types for Events and Retreats with dynamic schema, Integration with Google Calendar and iCal for event syncing, Custom-built contact form with Inputmask and Gmail SMTP support, Admin-controlled content via WordPress Customizer (hero images, contact info, etc.)Focused on UX clarity and accessibility for all age groups",
+    image: "/fmm.png",
+    tags: ['WordPress', 'Tailwindcss', 'PHP', 'UX Design'],
+    demoUrl: "https://freedommountainministries.com",
+    githubUrl: "https://github.com/Darrin-Holtz/freedom-mountain-ministries",
+  }, 
 ];
 
 export const ProjectsSection = () => {
@@ -80,8 +92,7 @@ export const ProjectsSection = () => {
               </div>
             </div>
           ))}
-        </div>
-
+        </div>        
         <div className="text-center mt-12">
           <a
             className="cosmic-button w-fit flex items-center mx-auto gap-2"
