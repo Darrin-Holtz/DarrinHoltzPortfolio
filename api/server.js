@@ -22,7 +22,7 @@ const contactLimiter = rateLimit({
 });
 
 app.use(cors({
-    origin: ["http://localhost:5173", "https://darrinholtz.com"], // Make sure this matches your React app's development server URL
+    origin: ["http://localhost:5173", "https://darrinholtz.com", "https://darrin-holtz-portfolio.vercel.app"], // Make sure this matches your React app's development server URL
 }));
 app.use(express.json());
 
