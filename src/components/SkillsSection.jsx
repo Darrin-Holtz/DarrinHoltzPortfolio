@@ -1,95 +1,107 @@
-import { useState } from "react";
-import { cn } from "@/lib/utils";
-
-const skills = [
-  // Frontend
-  { name: "HTML/CSS", level: 95, category: "frontend", description: "Semantic markup and responsive, accessible styling" },
-  { name: "JavaScript", level: 90, category: "frontend", description: "Modern ES6+ syntax, DOM manipulation, event handling" },
-  { name: "React", level: 90, category: "frontend", description: "Reusable components, hooks, and SPA architecture" },
-  { name: "TypeScript", level: 85, category: "frontend", description: "Typed React components and safer JavaScript" },
-  { name: "Tailwind CSS", level: 90, category: "frontend", description: "Utility-first CSS for responsive and fast UI design" },
-  { name: "Next.js", level: 80, category: "frontend", description: "Server-side rendering, API routes, and app routing" },
-
-  // Backend
-  { name: "Node.js", level: 80, category: "backend", description: "Server-side JavaScript with event-driven architecture" },
-  { name: "Express", level: 75, category: "backend", description: "REST APIs and middleware in a lightweight Node.js framework" },
-  { name: "MongoDB", level: 70, category: "backend", description: "NoSQL database for flexible, document-based data modeling" },
-  { name: "PostgreSQL", level: 65, category: "backend", description: "Relational database with strong data integrity and SQL" },
-  { name: "PHPMyAdmin", level: 90, category: "backend", description: "GUI for managing MySQL databases, tables, and queries" },
-
-  // CMS
-  { name: "WordPress", level: 95, category: "cms", description: "Custom themes, Elementor, content workflows" },
-  { name: "Sanity.io", level: 80, category: "cms", description: "Structured content modeling with real-time editing" },
-  { name: "Payload CMS", level: 75, category: "cms", description: "Headless CMS with full backend control and TypeScript support" },
-
-  // Tools
-  { name: "Git/GitHub", level: 90, category: "tools", description: "Version control, branching, and collaboration workflows" },
-  { name: "Photopea", level: 70, category: "tools", description: "Browser-based image editing for quick design tasks" },
-  { name: "Figma", level: 85, category: "tools", description: "UI design, wireframes, and prototyping with collaboration" },
-  { name: "VS Code", level: 95, category: "tools", description: "Code editing with extensions, snippets, and terminal integration" },
-
-  // Payment Gateways
-  { name: "Stripe", level: 85, category: "payment gateways", description: "Checkout, API integration, webhooks, and invoicing" },
+const capabilities = [
+  {
+    title: "Frontend Engineering",
+    summary: "Responsive, component-driven interfaces that stay fast and stable as products grow.",
+    proof: "Built modern React and Next.js experiences with polished UX and clean architecture.",
+    stack: ["React", "Next.js", "TypeScript"],
+    accent: "from-cyan-400/25 to-sky-400/5",
+  },
+  {
+    title: "CMS and Content Systems",
+    summary: "Editor-friendly sites that make publishing simple without sacrificing design quality.",
+    proof: "Delivered custom WordPress and headless CMS setups that non-technical teams can manage.",
+    stack: ["WordPress", "Sanity", "Payload"],
+    accent: "from-emerald-400/25 to-lime-400/5",
+  },
+  {
+    title: "E-commerce and Payments",
+    summary: "Checkout and booking flows built for trust, clarity, and conversion.",
+    proof: "Integrated Stripe checkout and webhook-driven booking confirmation workflows.",
+    stack: ["Stripe", "Webhooks", "Checkout UX"],
+    accent: "from-amber-400/25 to-orange-400/5",
+  },
+  {
+    title: "Full-stack Integration",
+    summary: "Connected frontends and APIs with reliable data models and secure request handling.",
+    proof: "Shipped server-backed session and seat-hold flows with robust request/response logic.",
+    stack: ["Node.js", "Express", "Convex"],
+    accent: "from-violet-400/25 to-indigo-400/5",
+  },
+  {
+    title: "Performance and Accessibility",
+    summary: "Interfaces optimized for speed, readability, and smooth interaction across devices.",
+    proof: "Applied semantic structure, responsive layouts, and lightweight animation strategies.",
+    stack: ["Core Web Vitals", "A11y", "Responsive UI"],
+    accent: "from-fuchsia-400/25 to-rose-400/5",
+  },
+  {
+    title: "Delivery and Collaboration",
+    summary: "Consistent shipping workflows from planning to production deployment.",
+    proof: "Used Git-based collaboration and production checks to keep launches predictable.",
+    stack: ["GitHub", "Vercel", "QA Flow"],
+    accent: "from-teal-400/25 to-cyan-400/5",
+  },
 ];
 
-const categories = ["all", "frontend", "backend", "tools", "cms", "payment gateways"];
-
 export const SkillsSection = () => {
-  const [activeCategory, setActiveCategory] = useState("all");
-
-  const filteredSkills = skills.filter(
-    (skill) => activeCategory === "all" || skill.category === activeCategory
-  );
   return (
-    <section id="skills" className="py-24 px-4 relative bg-secondary/30">
-      <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          My <span className="text-primary"> Skills</span> Set
-          <p className="mt-4 text-xl">Tools I'm familiar with when designing, building, and deploying projects</p>
-        </h2>
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category, key) => (
-            <button
-              key={key}
-              onClick={() => setActiveCategory(category)}
-              className={cn(
-                "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
-                activeCategory === category
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary/70 text-forefround hover:bd-secondary"
-              )}
-            >
-              {category}
-            </button>
-          ))}
+    <section id="skills" className="relative overflow-hidden px-4 py-24">
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute left-0 top-16 h-64 w-64 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute right-0 bottom-8 h-72 w-72 rounded-full bg-cyan-300/10 blur-3xl" />
+      </div>
+
+        <div className="container mx-auto">
+        <div className="mx-auto mb-12 max-w-3xl text-center">
+          <span className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
+            Capabilities
+          </span>
+
+          <h2 className="mt-5 text-3xl font-bold leading-tight md:text-5xl">
+            Skills That Create <span className="text-primary">Real Impact</span>
+          </h2>
+
+          <p className="mt-4 text-base text-white/80 md:text-lg">
+            Instead of just listing tools, this is the value I bring to projects,
+            from UX decisions to production delivery.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredSkills.map((skill, key) => (
-            <div
-              key={key}
-              className="bg-card p-6 rounded-lg shadow-xs card-hover"
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {capabilities.map((item) => (
+            <article
+              key={item.title}
+              className="group relative overflow-hidden rounded-3xl border border-white/15 bg-white/5 p-6 backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:border-primary/45 hover:bg-white/[0.09] hover:shadow-[0_20px_55px_rgba(0,0,0,0.32)]"
             >
-              <div className="text-left mb-4 relative group cursor-pointer">
-                <h3 className="font-semibold text-lg"> {skill.name}
-                    <span className="absolute left-0 bottom-full mb-2 hidden group-hover:block w-max max-w-xs rounded bg-gray-800 px-3 py-1 text-xs text-white shadow-lg z-10">
-                        {skill.description}
-                    </span>
-                </h3>
-              </div>
-              <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
-                <div
-                  className="bg-primary h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
-                  style={{ width: skill.level + "%" }}
-                />
-              </div>
+              <div
+                className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${item.accent} opacity-40 transition-opacity duration-500 group-hover:opacity-75`}
+              />
 
-              <div className="text-right mt-1">
-                <span className="text-sm text-muted-foreground">
-                  {skill.level}%
-                </span>
+              <div className="relative z-10">
+                <h3 className="text-left text-xl font-semibold text-white">
+                  {item.title}
+                </h3>
+
+                <p className="mt-3 text-left text-sm leading-relaxed text-white/85">
+                  {item.summary}
+                </p>
+
+                <p className="mt-4 rounded-2xl border border-white/15 bg-black/20 px-4 py-3 text-left text-sm text-white/80">
+                  {item.proof}
+                </p>
+
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {item.stack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="rounded-full border border-white/20 bg-black/30 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white/80"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
