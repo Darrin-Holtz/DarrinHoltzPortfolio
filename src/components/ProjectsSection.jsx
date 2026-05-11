@@ -23,6 +23,16 @@ const projects = [
     demoUrl: "",
     githubUrl: "https://github.com/Darrin-Holtz/ministry-theme",
   },
+  {
+    id: 3,
+    title: "HoltzDigital",
+    description:
+     "Buffalo web design agency website and blog built with Next.js 16, Convex, Better Auth, Tailwindcss and a custom admin dashboard. The site features a clean, modern design with a focus on showcasing the agency's portfolio and expertise. It includes a custom-built admin dashboard for easy content management, a blog section for sharing industry insights, and a contact form with SMTP integration for lead generation. The site is optimized for performance and SEO, with dynamic metadata and schema support for enhanced search visibility.",
+    image: "/HoltzDigital.png",
+    tags: ['Nextjs', 'Tailwindcss', 'Convex', 'UX Design'],
+    demoUrl: "https://holtz-digital.vercel.app",
+    githubUrl: "https://github.com/Darrin-Holtz/holtz-digital",
+  },
 ];
 
 export const ProjectsSection = () => {
