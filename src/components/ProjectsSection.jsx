@@ -18,10 +18,10 @@ const projects = [
     title: "Harbor Lights Ministry",
     description:
      "A custom WordPress theme built from the ground up for a faith-based organization focused on spiritual retreats, events, and outreach. The site features a clean, responsive design with Tailwind CSS, dynamic event listings, a custom contact form with SMTP integration, and admin-friendly controls via the WordPress Customizer.Key Features: Fully responsive WordPress theme using TailwindCSS, Custom post types for Events and Retreats with dynamic schema, Integration with Google Calendar and iCal for event syncing, Custom-built contact form with Inputmask and Gmail SMTP support, Admin-controlled content via WordPress Customizer (hero images, contact info, etc.)Focused on UX clarity and accessibility for all age groups",
-    image: "/fmm.png",
+    image: "/HarborLights.png",
     tags: ['WordPress', 'Tailwindcss', 'PHP', 'UX Design'],
-    demoUrl: "https://freedommountainministries.com",
-    githubUrl: "https://github.com/Darrin-Holtz/freedom-mountain-ministries",
+    demoUrl: "",
+    githubUrl: "https://github.com/Darrin-Holtz/ministry-theme",
   },
 ];
 
